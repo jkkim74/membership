@@ -1,0 +1,53 @@
+﻿@charset "utf-8";
+body.type_full_height { height:100vh;}
+body.type_full_height > .wrap { padding-top:88px; height:inherit; box-sizing:border-box;}
+body.type_full_height section { text-align:center; box-sizing:border-box;}
+.header { position:fixed; left:0; top:0; width:100%; z-index: 10; background:#fff;}
+.header h1 { position:relative; padding:25px 4%; border-bottom:1px solid #e4e4e4; text-align:center; font-size:25px;}
+.header h1 a { position:absolute; left:4%; top:50%; max-width:14px; width:5%; transform:translate(0,-50%); -webkit-transform:translate(0,-50%);}
+.header h1 a img { display:block; width:100%;}
+.content_wrap { height:calc(100% - 90px);}
+.section_order1 { position:relative; height:calc(45% - 37.5px); box-sizing:border-box;}
+.section_order1 .abs { position:absolute; left:0; top:50%; width:100%;}
+.section_order2 { position:relative; height:calc(55% - 37.5px);}
+.section_order2 .abs { position:absolute; left:0; top:43%; width:100%;}
+.sec_img { min-width:70px; width:10%;}
+.section_ip { padding:2%; width:100%; height:75px; background:#f0f0f0; box-sizing:border-box;}
+.section_ip .ip_area { height:100%; background:#fff; font-size:0;}
+.section_ip .ip_area input { display:inline-block; width:22%; height:100%; text-align:center; font-size:25px; color:#1b1b1b; vertical-align:middle;}
+.section_ip .ip_area .clip { display:inline-block; width:4%; font-size:25px; color:#1b1b1b; vertical-align:middle;}
+.txt_type1 { padding-top:3%; line-height:1.6; font-size:20px; color:#1b1b1b;}
+.txt_type2 { padding:3% 0 0; line-height:100%; font-size:17px; color:#888;}
+.txt_type3 { padding-top:4%; font-size:25px; color:#ff143c; font-weight:bold;}
+.txt_type3 a { pointer-events:none; font-size:inherit; color:inherit; font-weight:inherit;}
+.txt_type3 img { margin-right:5px; width:7%; max-width:33px; min-width:20px;}
+.btn_Domino { position:fixed; left:0; bottom:0; height:90px; width:100%; background:#ff143c; text-align:center; font-size:25px; color:#fff; font-weight:500;}
+
+@media (max-width:420px) {
+	.txt_type1 { font-size:16px;}
+	.txt_type2 { font-size:14px;}
+	.section_ip .ip_area input,
+	.section_ip .ip_area .clip,
+	.txt_type3,
+	.btn_Domino { font-size:22px;}
+}
+
+@media (max-height:560px) {
+	.sec_img { min-width:50px;}
+	.txt_type1 { font-size:14px;}
+	.txt_type2 { font-size:12px;}
+	.section_ip .ip_area input,
+	.section_ip .ip_area .clip,
+	.txt_type3,
+	.btn_Domino { font-size:18px;}
+}
+
+@media (max-width:330px) {
+	.sec_img { min-width:50px;}
+	.txt_type1 { font-size:14px;}
+	.txt_type2 { font-size:12px;}
+	.section_ip .ip_area input,
+	.section_ip .ip_area .clip,
+	.txt_type3,
+	.btn_Domino { font-size:18px;}
+}

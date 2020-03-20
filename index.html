@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalabel=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>*</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+        document.documentElement.addEventListener('touchstart', function (event) { if (event.touches.length > 1) { event.preventDefault();}}, false);
+    </script>
+</head>
+<body class="type_full_height">
+<div id="wrap" class="wrap">
+	<header class="header">
+		<h1>
+			<a href="#a"><img src="image/ico_arrow.png" alt="이전"></a>
+			사전 안내 사항
+		</h1>
+	</header>
+	<div class="content_wrap">
+		<section class="section_order1 section">
+			<div class="abs">
+				<img src="image/ico_creditcard.png" alt="" class="sec_img">
+				<div class="txt_type1">온라인 주문 시 할인 적용을 위해 도미노피자 <br>로그인 및 멤버십 카드 번호 입력이 필요합니다.</div>
+				<div class="txt_type2">카드 번호 메모 후 사용하시기 바랍니다.</div>
+			</div>
+		</section>
+		<section class="section_ip">
+			<div class="ip_area">
+				<input type="number" maxlength="4" oninput="maxLengthCheck(this)" value="1234" readonly>
+				<span class="clip">-</span>
+				<input type="number" maxlength="4" oninput="maxLengthCheck(this)" value="1234" readonly>
+				<span class="clip">-</span>
+				<input type="number" maxlength="4" oninput="maxLengthCheck(this)" value="1234" readonly>
+				<span class="clip">-</span>
+				<input type="number" maxlength="4" oninput="maxLengthCheck(this)" value="1234" readonly>
+			</div>
+		</section>
+		<section class="section_order2 section">
+			<div class="abs">
+				<img src="image/ico_phone1.png" alt="" class="sec_img">
+				<div class="txt_type1">전화 주문의 경우 포장/배달 시 <br>멤버십 앱 바코드를 보여주시면 적용됩니다.</div>
+				<div class="txt_type3">
+					<img src="image/ico_phone2.png" alt="">
+					<a href="#a">전화주문 1577-3082</a>
+				</div>
+			</div>
+		</section>
+	</div>
+	<a href="https://web.dominos.co.kr/goods/list?dsp_ctgr=C0101" target="_blank" class="btn_Domino">도미노피자 홈페이지로 이동</a>
+</div>
+<script type="text/javascript">
+	$(function(){
+		/* 디바이스 체크 전용 start */
+		btn_domino();
+		abs();
+		/* 디바이스 체크 전용 end */
+		var cw = $('.content_wrap').height();
+		console.log(cw);
+		if ( cw <= 490 ) {
+			$('.content_wrap').css({
+				'height':'490px',
+				'overflow':'auto',
+				'padding-bottom':'90px',
+			});
+		}else{
+			$('.content_wrap').css({
+				'height':'',
+				'overflow':'',
+				'padding-bottom':'',
+			});
+		}
+	});
+	$(window).resize(function(){
+		/* 디바이스 체크 전용 start */
+		btn_domino();
+		abs();
+		/* 디바이스 체크 전용 end */
+	});
+	
+	function maxLengthCheck(object){ //input maxlength
+    if (object.value.length > object.maxLength){
+			object.value = object.value.slice(0, object.maxLength);
+    }
+	};
+	
+	function btn_domino(){ // 도미노 홈페이지 버튼
+		var btn1 = $('.btn_Domino'),
+				btn1_height = $(btn1).height();
+		$(btn1).css('line-height',btn1_height+'px');
+	};
+	function abs(){
+		var th_height1 = $('.section_order1 .abs').height() / 2,
+				th_height2 = $('.section_order2 .abs').height() / 2;
+		$('.section_order1 .abs').css('margin-top','-'+th_height1+'px');
+		$('.section_order2 .abs').css('margin-top','-'+th_height2+'px');
+	};
+
+</script>
+</body>
+</html>
