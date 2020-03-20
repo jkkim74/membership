@@ -7,21 +7,7 @@
     <title>*</title>
     <link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<style>
-		html {
-			-webkit-touch-callout: none;
-			-webkit-touch-select: none;
-			-ms-user-select: none;
-			-moz-user-select: none;
-			-webkit-user-select: none;
-			-user-select: none;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-		}
-	</style>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script>
-        document.documentElement.addEventListener('touchstart', function (event) { if (event.touches.length > 1) { event.preventDefault();}}, false);
-    </script>
 </head>
 <body class="type_full_height">
 <div id="wrap" class="wrap">
@@ -84,6 +70,8 @@
 				'padding-bottom':'',
 			});
 		}
+
+		document.documentElement.addEventListener('touchstart', function (event) { alert("1"); if (event.touches.length > 1) { event.preventDefault(); } }, false);
 	});
 	$(window).resize(function(){
 		/* 디바이스 체크 전용 start */
