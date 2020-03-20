@@ -6,17 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>*</title>
     <link rel="stylesheet" type="text/css" href="css/default.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	**Use below code:**
-	<style type="text/css">
-		input {
-			-webkit-user-select: none;
-			/* disable selection/Copy of UIWebView */
-			-webkit-touch-callout: none;
-			/* disable the IOS popup when long-press on a link */
-		}
-	</style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+        document.documentElement.addEventListener('touchstart', function (event) { 
+			if (event.touches.length > 1) { event.preventDefault();}}, false);
+    </script>
 </head>
 <body class="type_full_height">
 <div id="wrap" class="wrap">
@@ -35,7 +30,7 @@
 			</div>
 		</section>
 		<section class="section_ip">
-			<div class="ip_area">
+			<div class="ip_area" ontouchstart="javascript:return false;" ontouchend="javascript:return false;">
 				<input type="number" maxlength="4" oninput="maxLengthCheck(this)" value="1234" readonly>
 				<span class="clip">-</span>
 				<input type="number" maxlength="4" oninput="maxLengthCheck(this)" value="1234" readonly>
