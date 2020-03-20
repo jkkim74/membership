@@ -71,7 +71,9 @@
 			});
 		}
 
-		document.documentElement.addEventListener('touchstart', function (event) { event.preventDefault(); if (event.touches.length > 1) { event.preventDefault(); } }, false);
+		//document.documentElement.addEventListener('touchstart', function (event) {if (event.touches.length > 1) { event.preventDefault(); } }, false);
+		window.addEventListener('touchstart', onTouchStart, false);
+		window.addEventListener('touchend', onTouchEnd, false);
 	});
 	$(window).resize(function(){
 		/* 디바이스 체크 전용 start */
@@ -97,6 +99,19 @@
 		$('.section_order1 .abs').css('margin-top','-'+th_height1+'px');
 		$('.section_order2 .abs').css('margin-top','-'+th_height2+'px');
 	};
+
+	var touchStartTimeStamp = 0;
+	var touchEndTimeStamp = 0;
+	var timer;
+	function onTouchStart(e) {
+		touchStartTimeStamp = e.timeStamp;
+	}
+
+	function onTouchEnd(e) {
+		touchEndTimeStamp = e.timeStamp;
+
+		console.log(touchEndTimeStamp - touchStartTimeStamp);// in miliseconds
+	}
 
 </script>
 </body>
