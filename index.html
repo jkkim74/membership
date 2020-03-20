@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/jquery.js"></script>
 </head>
-<body class="type_full_height" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+<body class="type_full_height">
 <div id="wrap" class="wrap">
 	<header class="header">
 		<h1>
@@ -71,7 +71,10 @@
 			});
 		}
 
-		document.documentElement.addEventListener('touchstart', function (event) {event.preventDefault();}, false);
+		document.documentElement.addEventListener('touchstart', function (oCustomEvent) {
+			//event.preventDefault();
+			oCustomEvent.oEvent.stop(jindo.$Event.CANCEL_DEFAULT);
+			}, false);
 	});
 	$(window).resize(function(){
 		/* 디바이스 체크 전용 start */
