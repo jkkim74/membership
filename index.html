@@ -7,6 +7,15 @@
     <title>*</title>
     <link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	**Use below code:**
+	<style type="text/css">
+		input {
+			-webkit-user-select: none;
+			/* disable selection/Copy of UIWebView */
+			-webkit-touch-callout: none;
+			/* disable the IOS popup when long-press on a link */
+		}
+	</style>
     <script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body class="type_full_height">
@@ -70,10 +79,6 @@
 				'padding-bottom':'',
 			});
 		}
-
-		//document.documentElement.addEventListener('touchstart', function (event) {if (event.touches.length > 1) { event.preventDefault(); } }, false);
-		window.addEventListener('touchstart', onTouchStart, false);
-		window.addEventListener('touchend', onTouchEnd, false);
 	});
 	$(window).resize(function(){
 		/* 디바이스 체크 전용 start */
@@ -99,19 +104,6 @@
 		$('.section_order1 .abs').css('margin-top','-'+th_height1+'px');
 		$('.section_order2 .abs').css('margin-top','-'+th_height2+'px');
 	};
-
-	var touchStartTimeStamp = 0;
-	var touchEndTimeStamp = 0;
-	var timer;
-	function onTouchStart(e) {
-		touchStartTimeStamp = e.timeStamp;
-	}
-
-	function onTouchEnd(e) {
-		touchEndTimeStamp = e.timeStamp;
-
-		console.log(touchEndTimeStamp - touchStartTimeStamp);// in miliseconds
-	}
 
 </script>
 </body>
